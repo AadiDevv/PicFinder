@@ -6,6 +6,8 @@ const form = document.querySelector('form');
 const input = document.querySelector('.form__input');
 const imgContainer = document.querySelector('.result');
 const showMoreBtn = document.querySelector('.btn');
+const intro = document.querySelector('.introduction');
+
 
 let inputData = "";
 let page = 0;
@@ -18,6 +20,7 @@ let page = 0;
         inputData = input.value;
         search();
         input.value ='';
+        intro.style.display ='none';
     })
 
 //FUNCTIONS search
