@@ -4,13 +4,15 @@ let url ="";
 
 const form = document.querySelector('form');
 const input = document.querySelector('.form__input');
-const imgContainer = document.querySelector('.result');
+const imgContainer = document.querySelector('.result__container');
 const showMoreBtn = document.querySelector('.btn');
 const intro = document.querySelector('.introduction');
+const noResult = document.querySelector('.result__no');
 
 
 let inputData = "";
 let page = 0;
+
 
 //EVENT 
     form.addEventListener('submit',(event)=>{
@@ -49,15 +51,24 @@ let page = 0;
                 // Clear previous results if it's the first page
                 if (page === 1) {
                     imgContainer.innerHTML = '';
+                    noResult.style.display='none';
+
                 }
+                if(results.length === 0){
+                    noResult.style.display='flex';
+                    noResult.innerHTML = `
+                    <h3>Sorry!</h3>
+                    <p> No resultsfound for "${inputData}"...
+                    `;
+                }
+                // number of generated images
+                const numberOfImg = 8;
 
-
-                results.forEach(result => {
-                 
+                for(let i=0; i<numberOfImg;i++){
                     //asign data to var
-                    const imgSource = result.urls.small;
-                    const aUrl = result.links.html;
-                    const description = result.alt_description
+                    const imgSource = results[i].urls.small;
+                    const aUrl = results[i].links.html;
+                    const description = results[i].alt_description
 
                     //impliment to html
                     const imgEl = document.createElement('div');
@@ -69,11 +80,10 @@ let page = 0;
                     </a>`;
 
                     imgContainer.appendChild(imgEl);
-
-                });
-
+                }
+               
                 
-             // Show more button visibility
+             // Show more button display
             showMoreBtn.style.display = results.length > 0 ? 'block' : 'none';
         } }catch (error) {
             if(error.status === 404){
