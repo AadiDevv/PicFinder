@@ -1,5 +1,5 @@
 # PicFinder
-PicFinder est un site web responsive développé avec HTML, CSS et JavaScript. Il permet aux utilisateurs de rechercher des images selon leurs critères et de naviguer à travers les résultats. L'application utilise l'API d'Unsplash pour récupérer et afficher les images recherchées de manière dynamique, en utilisant la méthode Fetch pour effectuer les requêtes HTTP vers l'API.
+PicFinder permet aux utilisateurs de rechercher des images selon leurs critères et de naviguer à travers les résultats. L'application utilise l'API d'Unsplash pour récupérer et afficher les images recherchées de manière dynamique, en utilisant la méthode Fetch pour effectuer les requêtes HTTP vers l'API.
 
 ## Fonctionnalités
 Recherche d'images en temps réel à partir de mots-clés saisis.
