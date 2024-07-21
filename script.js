@@ -60,6 +60,8 @@ let page = 0;
                     <h3>Sorry!</h3>
                     <p> No resultsfound for "${inputData}"...
                     `;
+                    showMoreBtn.style.display='none';
+                    
                 }
                 // number of generated images
                 const numberOfImg = 8;
